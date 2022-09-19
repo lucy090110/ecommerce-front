@@ -1,8 +1,7 @@
 import {applyMiddleware, createStore} from "redux";
-import rootReducer from "./reducers";
 import {createHashHistory} from 'history';
-import createRootReducer from "./reducers";
 import {routerMiddleware} from "connected-react-router";
+import createRootReducer from "./reducers"
 export const history=createHashHistory();
 
 const store=createStore(createRootReducer(history),applyMiddleware(routerMiddleware(history)))
