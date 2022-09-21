@@ -1,6 +1,7 @@
 import {combineReducers} from "redux";
 import {connectRouter} from "connected-react-router";
 import testReducer from "./test.reducer";
+import signupReducer from "../../../components/signup/reducer"
 import {History} from 'history';
 
 const createRootReducer=(history:History)=>combineReducers({
