@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from "./Routes";
+import Routes from "@/src/routes";
 import {Provider} from "react-redux";
 import store,{history} from "./store";
 import {ConnectedRouter} from "connected-react-router";
-import './style.css'
+import '@/src/style.css'
 
 const ConnectedR:any=ConnectedRouter;
 ReactDOM.render(

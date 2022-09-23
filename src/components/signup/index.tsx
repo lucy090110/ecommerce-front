@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react';
 import { Button, Form, Input,Result } from 'antd';
 import {Link} from "react-router-dom";
-import Layout from "@/src/components/core/common/Layout";
+import Layout from "@/src/components/common/Layout";
 
 const Signup = (props:any) => {
     const {signupAction,signupResetAction,state}=props;

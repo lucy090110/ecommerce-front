@@ -1,7 +1,7 @@
 import React from 'react';
 import {MenuProps,Menu} from 'antd';
 import {useSelector} from "react-redux";
-import {AppState} from "../../../store"
+import {AppState} from "../../store"
 import {Link} from "react-router-dom";
 import {RouterState} from "connected-react-router";
 
