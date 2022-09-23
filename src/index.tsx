@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {API} from './config';
 import Routes from "./Routes";
 import {Provider} from "react-redux";
 import store,{history} from "./store";

@@ -1,8 +1,9 @@
 import {createActions} from 'redux-actions';
-import {SIGNUP,SIGNUP_SUCCESS,SIGNUP_FAIL,SignupAction,SignupSuccessAction,SignupFailAction,SignupPayload} from './actionTypes'
+import actionTypes from './actionTypes'
 
 export default createActions({
-       SIGNUP:(payload:SignupPayload):SignupAction=>payload,
-       SIGNUP_SUCCESS:():SignupSuccessAction=>{},
-       SIGNUP_FAIL:(message:string):SignupFailAction=>message
+       [actionTypes.SIGNUP]:(payload)=>payload,
+       [actionTypes.SIGNUP_SUCCESS]:()=>{},
+       [actionTypes.SIGNUP_FAIL]:(message)=>message,
+       [actionTypes.SIGNUP_RESET]:()=>{}
 })

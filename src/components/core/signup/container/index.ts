@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import Signup from '../index';
-import {SIGNUP} from '../action/actionTypes'
+import actionTypes from '../action/actionTypes'
+const {SIGNUP,SIGNUP_RESET}=actionTypes
 const mapStateToProps = (state:any) => {
-      return {}
+      return {state}
 };
 function mapDispatchToProps(dispatch:any) {
     return {
-        signup: (param) => dispatch({ type: SIGNUP,payload:param })
+        signupAction: (param) => dispatch({ type: SIGNUP,payload:param }),
+        signupResetAction:()=>dispatch({type:SIGNUP_RESET})
     };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Signup);
