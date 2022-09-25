@@ -1,7 +1,7 @@
 export const isAuth=()=>{
-    const auth=JSON.parse(localStorage.getItem('auth'))
+    const auth=null
     if(auth){
-       return auth
+       return JSON.parse(<string>localStorage.getItem('auth'))
     }
     return false
 }

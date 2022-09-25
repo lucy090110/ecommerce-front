@@ -1,5 +1,5 @@
 import {createActions} from 'redux-actions';
-import actionTypes from '@/src/components/core/signin/action/actionTypes'
+import actionTypes from '@/src/components/app/signin/action/actionTypes'
 
 export default createActions({
        [actionTypes.SIGNIN]:(payload)=>payload,

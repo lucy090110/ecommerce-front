@@ -1,15 +1,14 @@
 import React from 'react';
-import Layout from "../common/Layout";
+import Layout from "../../common/Layout";
 import {Button, Form, Input, Result} from "antd";
 import {Redirect} from "react-router-dom";
 
 const Signin = (props:any) => {
-    const {signinAction,signinResetAction,state}=props;
-    const {signin}=state;
-    const {auth}=signin
+    const {signinAction,getAuth,signinResetAction,state:{signin,app:{auth}}}=props;
     const [form] = Form.useForm()
     const onFinish=(value:any)=>{
         signinAction(value);
+        getAuth();
     }
     //注册失败
     const showError=()=>{
@@ -26,9 +25,9 @@ const Signin = (props:any) => {
     }
     const showRedirect=()=>{
         const {user:{role}}=auth
-        let path="/dashboard?role=admin"
+        let path="/app/dashboard?role=admin"
         if(role===0){
-            path="/dashboard?role=user"
+            path="/app/dashboard?role=user"
         }
         return (
             <Redirect to={path}/>
@@ -64,11 +63,11 @@ const Signin = (props:any) => {
     )
 
     return (
-        <Layout  {...props} title={'登录'} subTitle={"小伙伴，赶快来登录吧～"}>
+        <>
             {auth && showRedirect()}
             {showError()}
             {signupForm()}
-        </Layout>
+        </>
     );
 };
 

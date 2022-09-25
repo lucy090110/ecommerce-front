@@ -1,9 +1,9 @@
 import {put,takeEvery} from "redux-saga/effects"
-import actions from '@/src/components/core/signup/action/actionCreator'
-import actionTypes from '@/src/components/core/signup/action/actionTypes'
+import actions from '@/src/components/app/signup/action/actionCreator'
+import actionTypes from '@/src/components/app/signup/action/actionTypes'
 import axios from "axios"
-import {API} from "../../../../config"
-function* handleSignup(action){
+import {API} from "@/src/config"
+function* handleSignup(action:any){
   try {
     yield axios.post(`${API}/signup`, action.payload)
     console.log(actions)

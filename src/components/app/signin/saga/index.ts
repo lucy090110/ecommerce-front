@@ -1,9 +1,9 @@
 import {put,takeEvery} from "redux-saga/effects"
-import actions from '@/src/components/core/signin/action/actionCreator'
-import actionTypes from '@/src/components/core/signin/action/actionTypes'
+import actions from '@/src/components/app/signin/action/actionCreator'
+import actionTypes from '@/src/components/app/signin/action/actionTypes'
 import axios from "axios"
 import {API} from "@/src/config"
-function* handleSignin(action){
+function* handleSignin(action:any){
   try {
     let response=yield axios.post(`${API}/signin`, action.payload)
     localStorage.setItem('auth',JSON.stringify(response.data))

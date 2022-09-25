@@ -5,8 +5,7 @@ import {AppState} from "../../store"
 import {Link} from "react-router-dom";
 import {RouterState} from "connected-react-router";
 
-const Navigation = (props:any) => {
-    const {state:{auth}}=props
+const Navigation = ({auth}:any) => {
     const items: MenuProps['items'] = [
         {
             label: <Link to={'home'}>{'首页'}</Link>,
@@ -20,9 +19,9 @@ const Navigation = (props:any) => {
     ]
     if(auth){
         const {role}=auth
-        let path="/dashboard?role=admin"
+        let path="dashboard?role=admin"
         if(role===0){
-            path="/dashboard?role=user"
+            path="dashboard?role=user"
         }
         items.push({
             label:<Link to={path}>{'dashboard'}</Link>,
@@ -40,12 +39,8 @@ const Navigation = (props:any) => {
     }
     const router=useSelector<AppState,RouterState>((state)=> state.router)
     const keyName=router.location.pathname==='/'?'home':router.location.pathname
-    const pathname= keyName.split('/')[1]
+    const pathname= keyName.split('/app/')[1]
     return <Menu selectedKeys={[pathname]} mode="horizontal" items={items} />;
-};
-
-Navigation.propTypes = {
-
 };
 
 export default Navigation;

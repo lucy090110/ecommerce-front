@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from "@/src/components/common/Layout";
 const Dashboard = (props:any) => {
     return (
-        <Layout {...props} title={'模拟商城'} subTitle={'尽情购物吧～'}>
-        </Layout>
+        <div>
+        </div>
     );
 };
 

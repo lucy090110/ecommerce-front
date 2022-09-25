@@ -1,28 +1,27 @@
 import { handleActions } from 'redux-actions';
-import actionTypes from "@/src/components/core/signin/action/actionTypes"
-
+import actionTypes from "@/src/components/app/signup/action/actionTypes"
 const actions={
-       [actionTypes.SIGNIN]:(state, action)=>{
+       [actionTypes.SIGNUP]:(state:any, action:any)=>{
             return {
                ...state,
                 loaded:false,
                 success:false
             }
        },
-       [actionTypes.SIGNIN_SUCCESS]:(state, action)=>{
+       [actionTypes.SIGNUP_SUCCESS]:(state:any, action:any)=>{
             return {
                ...state,
                 loaded:true,
                 success:true
             }},
-       [actionTypes.SIGNIN_FAIL]:(state, action)=>{
+       [actionTypes.SIGNUP_FAIL]:(state:any, action:any)=>{
               return {
                  ...state,
                  message:action.payload.message,
                   loaded:true,
                   success:false
               }},
-       [actionTypes.SIGNIN_RESET]:(state, action)=>{
+       [actionTypes.SIGNUP_RESET]:(state:any, action:any)=>{
               return {
                  ...state,
                  message:'',

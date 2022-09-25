@@ -92,11 +92,11 @@ const Signup = (props:any) => {
 
     )
     return (
-        <Layout {...props} title={'注册'}  subTitle={"小伙伴，赶快来注册吧～"}>
+        <>
             {showSuccess()}
             {showError()}
             {signupForm()}
-        </Layout>
+        </>
     );
 };
 
