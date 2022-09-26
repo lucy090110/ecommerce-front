@@ -12,7 +12,7 @@ const App= (props:any) => {
             const {path,key,component}=item
             if(path==='/app/dashboard' && !auth){
                 return (
-                    <Redirect to="/app/signin" />
+                    <Redirect to="/app/signin"  key={'0'}/>
                 )
             }else{
                 return (
@@ -28,18 +28,18 @@ const App= (props:any) => {
         const titleInfo=routesConfig.filter((item)=>{
             return item.path===pathname
         })[0]
-        const {path}=titleInfo
-        if(path==='/app/dashboard'){
-            console.log({
-                ...titleInfo,
-                title: role?`管理员${titleInfo.title}`:`用户${titleInfo.title}`
-            })
+        if(titleInfo?.path==='/app/dashboard'){
             return {
                 ...titleInfo,
                 title: role?`管理员${titleInfo.title}`:`用户${titleInfo.title}`
             }
+            return titleInfo
+        }else{
+            return {
+                title:'',
+                subTitle:''
+            }
         }
-        return titleInfo
 
     }
     const {title,subTitle}=getTitleInfo();
@@ -54,7 +54,7 @@ const App= (props:any) => {
             <div style={{width:"80%",margin:"0 auto"}}>
                 <Switch>
                     {getRoutes()}
-                    <Redirect to="/app/home" />
+                    {auth && <Redirect to="/app/home" key={'1'} />}
                 </Switch>
             </div>
         </div>

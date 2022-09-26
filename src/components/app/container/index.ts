@@ -11,7 +11,7 @@ const mapStateToProps = (state:any) => {
 };
 function mapDispatchToProps(dispatch:any) {
     return {
-        getAuth: () => dispatch({ type: actionTypes.GETAUTH })
+        getAuth: () => dispatch({ type: actionTypes.GET_AUTH })
     };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

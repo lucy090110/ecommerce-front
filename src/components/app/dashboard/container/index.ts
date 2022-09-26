@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
-import Dashboard from '../index';
-// import actionTypes from '../action/actionTypes'
-// const {SIGNUP,SIGNUP_RESET}=actionTypes
+import Dashboard from '@/src/components/app/dashboard';
+import actionTypes from '@/src/components/app/dashboard/action/actionTypes'
+const {GET_CATEGORY}=actionTypes
 const mapStateToProps = (state:any) => {
       return {state}
 };
-// function mapDispatchToProps(dispatch:any) {
-//     return {
-//         signupAction: (param) => dispatch({ type: SIGNUP,payload:param }),
-//         signupResetAction:()=>dispatch({type:SIGNUP_RESET})
-//     };
-// }
-export default connect(mapStateToProps, null)(Dashboard);
+function mapDispatchToProps(dispatch:any) {
+    return {
+        getCategory: () => dispatch({ type: GET_CATEGORY })
+    };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

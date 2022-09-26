@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from "../../common/Layout";
 import {useSelector} from "react-redux";
 
 const Shop = (props:any) => {

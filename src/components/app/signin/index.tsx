@@ -1,14 +1,12 @@
 import React from 'react';
-import Layout from "../../common/Layout";
 import {Button, Form, Input, Result} from "antd";
 import {Redirect} from "react-router-dom";
 
 const Signin = (props:any) => {
-    const {signinAction,getAuth,signinResetAction,state:{signin,app:{auth}}}=props;
+    const {signinAction,state:{signin,app:{auth}}}=props;
     const [form] = Form.useForm()
     const onFinish=(value:any)=>{
         signinAction(value);
-        getAuth();
     }
     //注册失败
     const showError=()=>{

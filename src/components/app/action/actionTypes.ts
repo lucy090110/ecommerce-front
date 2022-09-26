@@ -1,5 +1,5 @@
 const actionTypes={
-    GETAUTH:'GETAUTH'
+    GET_AUTH:'GET_AUTH'
 }
 
 export default actionTypes;
