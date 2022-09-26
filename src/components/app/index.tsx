@@ -33,12 +33,8 @@ const App= (props:any) => {
                 ...titleInfo,
                 title: role?`管理员${titleInfo.title}`:`用户${titleInfo.title}`
             }
-            return titleInfo
         }else{
-            return {
-                title:'',
-                subTitle:''
-            }
+            return titleInfo
         }
 
     }
@@ -51,7 +47,7 @@ const App= (props:any) => {
                 title={title}
                 subTitle={subTitle}
             />
-            <div style={{width:"80%",margin:"0 auto"}}>
+            <div style={{width:"80%",margin:"20px auto"}}>
                 <Switch>
                     {getRoutes()}
                     {auth && <Redirect to="/app/home" key={'1'} />}

@@ -6,10 +6,10 @@ const Dashboard = (props:any) => {
     const {state:{app:{auth},router,dashboard:{data}},getCategory}=props
     const {user:{role}}=auth;
     const getComponent=()=>{
-        // if(role){
-        //   return(<AdminIndex auth={auth} getCategory={getCategory} category={data}/>)
-        // }
-        // return (<UserIndex/>)
+        if(role){
+          return(<AdminIndex auth={auth} getCategory={getCategory} category={data}/>)
+        }
+        return (<UserIndex/>)
         return(<div>1</div>)
     }
     return (

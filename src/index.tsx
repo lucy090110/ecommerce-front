@@ -5,6 +5,7 @@ import {Provider} from "react-redux";
 import store,{history} from "./store";
 import {ConnectedRouter} from "connected-react-router";
 import '@/src/style.css'
+import 'antd/dist/antd.css';
 
 const ConnectedR:any=ConnectedRouter;
 ReactDOM.render(

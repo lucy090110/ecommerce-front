@@ -26,7 +26,7 @@ const AdminIndex =({auth,category,getCategory}:any) => {
         {
             label: '添加产品',
             key: 'addProduction',
-            component:<AddProduction getCategory={getCategory} category={category}/>,
+            component:<AddProduction getCategory={getCategory} category={category} auth={auth}/>,
             icon: <ControlOutlined />
         },
         {
