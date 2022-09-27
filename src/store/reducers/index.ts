@@ -3,6 +3,7 @@ import {connectRouter} from "connected-react-router";
 import signupReducer from "@/src/components/app/signup/reducer"
 import signinReducer from "@/src/components/app/signin/reducer"
 import appReducer from "@/src/components/app/reducer"
+import homeReducer from "@/src/components/app/home/reducer"
 import dashboardReducer from "@/src/components/app/dashboard/reducer"
 import {History} from 'history';
 
@@ -11,7 +12,8 @@ const createRootReducer=(history:History)=>combineReducers({
     signup:signupReducer,
     signin:signinReducer,
     app:appReducer,
-    dashboard:dashboardReducer
+    dashboard:dashboardReducer,
+    home:homeReducer
 })
 
 export default createRootReducer;

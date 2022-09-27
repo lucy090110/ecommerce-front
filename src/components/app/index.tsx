@@ -33,8 +33,12 @@ const App= (props:any) => {
                 ...titleInfo,
                 title: role?`管理员${titleInfo.title}`:`用户${titleInfo.title}`
             }
-        }else{
+        }else if(titleInfo){
             return titleInfo
+        }else{
+            return routesConfig.filter((item)=>{
+                return item.path==='/app/home'
+            })[0]
         }
 
     }

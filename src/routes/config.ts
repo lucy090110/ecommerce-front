@@ -1,4 +1,4 @@
-import Home from "@/src/components/app/home/";
+import Home from "@/src/components/app/home/container";
 import Shop from "@/src/components/app/shop";
 import Signup from "@/src/components/app/signup/container";
 import Signin from "@/src/components/app/signin/container";

@@ -7,7 +7,7 @@ const Routes = () => {
         <HashRouter>
             <Switch>
                 <Route path={"/app"} component={App}></Route>
-                <Redirect to="/app" />
+                <Redirect to="/app/home" />
             </Switch>
         </HashRouter>
     );
